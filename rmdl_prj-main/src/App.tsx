@@ -12,22 +12,34 @@ const App = () => {
     if (items.length === 0) {
       setItems([
         {
-          item_name: "T-Shirt",
-          item_cost: 10.55,
+          item_name: "Sofa",
+          item_cost: 1099.00,
           item_quantity: 0,
-          description: "Soft cotton T-shirt perfect for casual wear.",
+          description: "A cushioned seat designed for comfort and relaxation.",         
         },
         {
-          item_name: "Shoes",
-          item_cost: 100.0,
+          item_name: "Bookcase Organizer",
+          item_cost: 179.00,
           item_quantity: 0,
-          description: "Comfortable running shoes for everyday use.",
+          description: "A tall shelving unit for organizing books and decor.",
         },
         {
-          item_name: "Watch",
-          item_cost: 500.99,
+          item_name: "Wardrobe Closet",
+          item_cost: 290.95,
           item_quantity: 0,
-          description: "The Apple Watch is a versatile smartwatch .",
+          description: "A standing closet designed for storing clothes and accessories."
+        },
+        {
+          item_name: "TV Stand Furniture",
+          item_cost: 382.58,
+          item_quantity: 0,
+          description: "A sturdy base for holding your TV and media accessories."
+        },
+        {
+          item_name: "Table Desk",
+          item_cost: 87.00,
+          item_quantity: 0,
+          description: "A flat-surfaced table ideal for working, studying, or organizing tasks.",
         },
       ] as any); // Add `as any` to allow extra description field if your context type is strict
     }
@@ -61,11 +73,11 @@ const App = () => {
         {/* Featured Product */}
         <div className="featured">
           <img
-            src="https://th.bing.com/th/id/ODL.cf1f293b0e98b2fe1f4c8e2e5d3a6e31?w=150&h=112&c=1&rs=1&qlt=80&o=6&cb=12&dpr=1.1&pid=RichNav"
-            alt="Featured Product"
+            src="https://www.ikea.com/us/en/images/products/idanaes-upholstered-storage-bed-naggen-beige__1322816_pe942270_s5.jpg?f=xl"
+            alt="Bed"
           />
-          <h3>Featured Product</h3>
-          <p className="price">$49.99</p>
+          <h3>Bed Frame</h3>
+          <p className="price">$859</p>
           <div className="stars">⭐⭐⭐⭐⭐</div>
         </div>
 
@@ -77,11 +89,15 @@ const App = () => {
               <div key={item.item_name} className="product-card">
                 <img
                   src={
-                    item.item_name === "T-Shirt"
-                      ? "https://is4.revolveassets.com/images/p4/n/uv/ALLR-MS48_V1.jpg"
-                      : item.item_name === "Shoes"
-                      ? "https://is4.revolveassets.com/images/p4/n/uv/ONR-WZ252_V1.jpg"
-                      : "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/49-cell-titanium-alpine-blue-ultra?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1693501939819"
+                    item.item_name === "Sofa"
+                      ? "https://www.ikea.com/us/en/images/products/kivik-sofa-tibbleby-beige-gray__1056144_pe848277_s5.jpg?f=xl"
+                      : item.item_name === "Bookcase Organizer"
+                      ? "https://www.ikea.com/us/en/images/products/billy-bookcase-brown-walnut-effect__1097082_pe864710_s5.jpg?f=xl"
+                      : item.item_name === "Wardrobe Closet"
+                      ? "https://www.ikea.com/us/en/images/products/hauga-wardrobe-with-sliding-doors-white__0939485_pe794580_s5.jpg?f=xl"
+                      : item.item_name === "TV Stand Furniture"
+                      ? "https://www.ikea.com/us/en/images/products/brimnes-tv-unit-black__0704610_pe725291_s5.jpg?f=xl"
+                      : "https://www.ikea.com/us/en/images/products/micke-desk-white__0736018_pe740345_s5.jpg?f=xl"
                   }
                   alt={item.item_name}
                 />
