@@ -12,6 +12,12 @@ const App = () => {
     if (items.length === 0) {
       setItems([
         {
+          item_name: "Bed Frame",
+          item_cost: 859.00,
+          item_quantity: 0,
+          description: "A comfortable upholstered storage bed frame.",
+        },
+        {
           item_name: "Sofa",
           item_cost: 1099.00,
           item_quantity: 0,
@@ -65,21 +71,34 @@ const App = () => {
     );
   };
 
+  const featuredItem = items.find(i => i.item_name === "Bed Frame") || {
+    item_name: "Bed Frame",
+    item_cost: 859.00,
+    item_quantity: 0,
+    description: "A comfortable upholstered storage bed frame.",
+  };
+
   return (
     <div className="container">
-      <Slider />
+    <Slider />
 
-      <div className="main-content">
-        {/* Featured Product */}
-        <div className="featured">
-          <img
-            src="https://www.ikea.com/us/en/images/products/idanaes-upholstered-storage-bed-naggen-beige__1322816_pe942270_s5.jpg?f=xl"
-            alt="Bed"
-          />
-          <h3>Bed Frame</h3>
-          <p className="price">$859</p>
-          <div className="stars">⭐⭐⭐⭐⭐</div>
+    <div className="main-content">
+      {/* Featured Product */}
+      <div className="featured">
+        <img
+          src="https://www.ikea.com/us/en/images/products/idanaes-upholstered-storage-bed-naggen-beige__1322816_pe942270_s5.jpg?f=xl"
+          alt="Bed"
+        />
+        <h3>{featuredItem.item_name}</h3>
+        <p className="price">${featuredItem.item_cost.toFixed(2)}</p>
+        <div className="stars">⭐⭐⭐⭐⭐</div>
+        
+        <div className="quantity-control">
+          <button onClick={() => decrease(featuredItem.item_name)}>-</button>
+          <span>{featuredItem.item_quantity}</span>
+          <button onClick={() => increase(featuredItem.item_name)}>+</button>
         </div>
+      </div>
 
         {/* Product List */}
         <div className="product-list">
